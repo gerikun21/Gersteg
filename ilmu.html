@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informasi GERSTEG</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    #container {
+        width: 80%;
+        margin: 50px auto;
+        text-align: left;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #333;
+    }
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+    #backBtn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    #backBtn:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <h1>GERSTEG - Geri Steganografi</h1>
+        <p><strong>Apa itu GERSTEG?</strong></p>
+        <p>GERSTEG, singkatan dari "Geri Steganografi", adalah sebuah proyek yang dibuat oleh Geri dan Riziq. Steganografi adalah praktik menyembunyikan pesan rahasia di dalam media yang lain, seperti gambar, audio, atau dalam konteks ini, file PDF, tanpa menimbulkan kecurigaan pada penerima pesan. GERSTEG dikembangkan untuk memungkinkan pengguna untuk melakukan encoding (menyembunyikan pesan) dan decoding (mendapatkan pesan tersembunyi) pada file PDF.</p>
+
+        <p><strong>Fitur-fitur GERSTEG:</strong></p>
+        <ol>
+            <li><strong>Encoding Pesan Rahasia:</strong> Pengguna dapat menyembunyikan pesan rahasia ke dalam file PDF menggunakan algoritma steganografi yang terintegrasi.</li>
+            <li><strong>Decoding Pesan Rahasia:</strong> Pengguna dapat mengungkap pesan rahasia yang tersembunyi dalam file PDF yang telah dienkripsi sebelumnya.</li>
+            <li><strong>Antarmuka Pengguna Sederhana:</strong> Antarmuka pengguna GERSTEG dirancang dengan sederhana sehingga mudah digunakan oleh pengguna dengan berbagai tingkat keahlian.</li>
+            <li><strong>Keamanan:</strong> GERSTEG memperhatikan keamanan data dengan menggunakan algoritma enkripsi yang kuat untuk melindungi pesan rahasia yang disisipkan dalam file PDF.</li>
+        </ol>
+
+        <p><strong>Siapa yang Membuat GERSTEG?</strong></p>
+        <p>GERSTEG dikembangkan oleh dua pengembang, yaitu Geri dan Riziq. Geri dan Riziq adalah dua individu yang bersemangat dalam bidang keamanan informasi dan teknologi. Mereka menyatukan pengetahuan dan keahlian mereka untuk menciptakan GERSTEG sebagai alat steganografi yang dapat diandalkan dan mudah digunakan.</p>
+
+        <p><strong>Tujuan GERSTEG:</strong></p>
+        <p>Tujuan utama GERSTEG adalah memberikan alat yang aman dan mudah digunakan bagi individu atau organisasi yang membutuhkan keamanan tambahan dalam pertukaran informasi rahasia. Dengan GERSTEG, pengguna dapat dengan mudah menyembunyikan dan mengungkap pesan rahasia tanpa kecurigaan dari pihak yang tidak berwenang.</p>
+
+        <p><strong>Kesimpulan:</strong></p>
+        <p>GERSTEG adalah proyek steganografi yang dibuat oleh Geri dan Riziq dengan tujuan menyediakan alat yang aman dan mudah digunakan untuk menyembunyikan dan mengungkap pesan rahasia dalam file PDF. Dengan fitur-fitur yang kuat dan antarmuka pengguna yang sederhana, GERSTEG menjadi solusi yang efektif dalam menjaga kerahasiaan informasi.</p>
+
+        <button id="backBtn" onclick="goBack()">Kembali</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

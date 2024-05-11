@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steganografi PDF - Decode</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    #container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+    }
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+    #fileInput {
+        margin-bottom: 10px;
+    }
+    #decodeBtn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+    #decodeBtn:hover {
+        background-color: #45a049;
+    }
+    #decodedMessage {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        word-wrap: break-word;
+    }
+    #backBtn {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        margin-top: 20px;
+    }
+    #backBtn:hover {
+        background-color: #2980b9;
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <h2>Dekode Pesan dari File PDF dengan HTML</h2>
+        <input type="file" id="fileInput"><br>
+        <button id="decodeBtn" onclick="decodePDF()">Dekode Pesan</button><br>
+        <div id="decodedMessage"></div>
+        <button id="backBtn" onclick="goToIndex()">Kembali</button>
+    </div>
+    <script>
+        // Fungsi untuk mengonversi teks biner menjadi teks ASCII
+        function binaryToText(binary) {
+            var result = '';
+            for (var i = 0; i < binary.length; i += 8) {
+                result += String.fromCharCode(parseInt(binary.substr(i, 8), 2));
+            }
+            return result;
+        }
+
+        // Fungsi untuk mendekode pesan dari PDF
+        function decodePDF() {
+            var fileInput = document.getElementById('fileInput');
+
+            if (fileInput.files.length == 0) {
+                alert("Mohon pilih file PDF terlebih dahulu.");
+                return;
+            }
+
+            var file = fileInput.files[0];
+            var fileReader = new FileReader();
+
+            fileReader.onload = function() {
+                var fileArray = new Uint8Array(this.result);
+                var binaryMessage = '';
+
+                for (var i = 0; i < fileArray.length; i++) {
+                    // Mendapatkan bit terakhir dari setiap byte dalam file PDF
+                    binaryMessage += (fileArray[i] & 1).toString();
+                }
+
+                var decodedMessage = binaryToText(binaryMessage);
+                document.getElementById('decodedMessage').innerText = decodedMessage;
+            };
+
+            fileReader.readAsArrayBuffer(file);
+        }
+
+        // Fungsi untuk kembali ke halaman awal
+        function goToIndex() {
+            window.location.href = "Indexq.html";
+        }
+    </script>
+</body>
+</html>
